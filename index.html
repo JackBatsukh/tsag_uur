@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Weather</title>
+  </head>
+  <body>
+    <header>
+      <div class="profile-container">
+        <div class="pro">
+          <img src="Group 1948754628.png" alt="" style="width: 60px; height: 60px;"/>
+        </div>
+        <div class="hi">
+          <h3 style="font-size: 12px">Hi, Javkhaa</h3>
+          <h1 style="font-size: 14px" id="idda">Даваа, 11/18/2024</h1>
+        </div>
+      </div>
+
+      <div class="search">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter city name"
+          style="padding: 5px; font-size: 14px"
+        />
+        <button
+          onclick="searchCity()"
+          style="padding: 5px 10px; font-size: 14px; cursor: pointer"
+        >
+          Search
+        </button>
+      </div>
+    </header>
+    <main id="sunriseCanvas" width="400" height="300">
+      <div class="ub">
+        <section class="today">
+          <div class="cloud">
+            <div class="left">
+              <img
+                src="Group 6.png"
+                alt=""
+                style="width: 90px; height: 87px"
+                id="now-icon"
+              />
+              <!-- <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" onerror="this.src='default-icon.png'" alt="Weather Icon" /> -->
+
+              <h2 style="font-size: 20px">
+                Ulaanbaatar <br />
+                Mongolia
+              </h2>
+            </div>
+            <div class="right">
+              <div class="temp">
+                <h4 style="font-size: 12px" id="temp">&deg;c</h4>
+                <p style="font-size: 12px">Температур</p>
+              </div>
+              <div class="humid">
+                <h4 style="font-size: 12px" id="humidity"></h4>
+                <p style="font-size: 12px">Чийгшэл</p>
+              </div>
+            </div>
+          </div>
+          <div class="tsastai">
+            <p>Цастай</p>
+            <p class="daralt">Агаарын даралт - 2%</p>
+            <p class="dundaj">Дундаж - 18&deg;</p>
+            <p class="feels">medregdene</p>
+          </div>
+          <div class="odoo">
+            <div class="now">
+              <p class="odoo">Одоо</p>
+              <img src="Group 6.png" alt="" style="width: 30px" />
+              <span class="degree">-2&deg;</span>
+            </div>
+            <div class="now">
+              <p>3PM</p>
+              <img src="Group 6.png" alt="" style="width: 30px" />
+              <span class="degree;">-4&deg;</span>
+            </div>
+            <div class="now">
+              <p>6PM</p>
+              <img src="Group 6.png" alt="" style="width: 30px" />
+              <span class="degree">-5&deg;</span>
+            </div>
+            <div class="now">
+              <p>9PM</p>
+              <img src="Eclipse.png" alt="" style="width: 30px" />
+              <span class="degree">-7&deg;</span>
+            </div>
+            <div class="now">
+              <p>12AM</p>
+              <img src="Moon Phase.png" alt="" style="width: 30px" />
+              <span class="degree">-9&deg;</span>
+            </div>
+          </div>
+        </section>
+        <section class="mygmar" id="mygmar"></section>
+      </div>
+      <section class="sunrise">
+        <div class="top">
+          <div class="sun">
+            <p style="font-size: 10px" class="sunrise1">Нар мандах - 07:40</p>
+            <img src="Group 11.png" alt="" style="width: 130px; height: 36px" />
+            <p style="font-size: 10px" class="sunset1">Нар жаргах - 19:30</p>
+          </div>
+          <div class="sun">
+            <p style="font-size: 12px">Дундаж температур</p>
+            <p style="font-size: 12px">Дунджаас +3&deg; илүү дулаан.</p>
+            <div class="unuudur">
+              <span style="font-size: 12px"
+                >Өнөөдөр <br />
+                Дундаж
+              </span>
+              <span style="font-size: 12px">
+                Ө: -2&deg; <br />
+                Ө: -5&deg;
+              </span>
+            </div>
+          </div>
+          <div class="sun">
+            <p style="font-size: 10px" class="sunrise1">Нар мандах - 07:40</p>
+            <img src="Group 11.png" alt="" style="width: 130px; height: 36px" />
+            <p style="font-size: 10px" class="sunset1">Нар жаргах - 19:30</p>
+          </div>
+          <div class="sun">
+            <p style="font-size: 12px">Дундаж температур</p>
+            <p style="font-size: 12px">Дунджаас +3&deg; илүү дулаан.</p>
+            <div class="unuudur">
+              <span style="font-size: 12px"
+                >Өнөөдөр <br />
+                Дундаж
+              </span>
+              <span style="font-size: 12px">
+                Ө: -2&deg; <br />
+                Ө: -5&deg;
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="snow-container" title="Click anywhere to remove snow"></div>
+
+    <footer>
+      Цаг уурын
+      <a href="https://www.jemimaabu.com" target="_blank" rel="noopener"
+        >мэдээ: Баяржавхлан ☃️</a
+      >
+    </footer>
+
+    <canvas id="sunriseCanvas" width="400" height="300"></canvas>
+
+    <script>
+      const apiKey = "248cd511b01020e1cb9e3421e7181807";
+      const weatherURL = "https://api.openweathermap.org/data/2.5/weather";
+      const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
+
+      function fetchWeather(city) {
+        fetch(`${weatherURL}?q=${city}&appid=${apiKey}&units=metric`)
+          .then((response) => {
+            if (!response.ok) {
+              return Promise.reject("Хот олдсонгүй!");
+            }
+
+            return response.json();
+          })
+          .then((data) => {
+            updateWeatherUI(data);
+            fetchForecast(city);
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      }
+
+      async function fetchForecast(city) {
+        try {
+          const response = await fetch(
+            `${forecastURL}?q=${city}&appid=${apiKey}&units=metric`
+          );
+          if (!response.ok) {
+            throw new Error("Forecast data not available");
+          }
+          const data = await response.json();
+          const dailyForecasts = data.list.filter((forecast) =>
+            forecast.dt_txt.includes("06:00:00")
+          );
+          updateTomorrowForecast(dailyForecasts);
+        } catch (error) {
+          alert(error);
+        }
+      }
+
+      function updateWeatherUI(data) {
+        const temp = Math.round(data.main.temp);
+        const humidity = data.main.humidity;
+        const description = data.weather[0].description;
+        const feelsLike = Math.round(data.main.feels_like);
+        const pressure = data.main.pressure;
+
+        idda.innerHTML = getFormattedDate();
+
+        document.getElementById("temp").textContent = `${temp}°C`;
+        document.getElementById("humidity").textContent = `${humidity}%`;
+        document.querySelector(
+          ".cloud .left h2"
+        ).innerHTML = `${data.name} <br /> ${data.sys.country}`;
+        document.querySelector(".tsastai p").textContent = description;
+        document.querySelector(
+          ".tsastai .daralt"
+        ).textContent = `Даралт ${pressure}`;
+        document.querySelector(
+          ".tsastai .feels"
+        ).innerText = `Мэдрэгдэнэ ${feelsLike}°C`;
+
+        const sunrise = formatTime(data.sys.sunrise);
+        const sunset = formatTime(data.sys.sunset);
+        document.querySelector(
+          ".sunrise .sunrise1"
+        ).textContent = `Нар мандах - ${sunrise}`;
+        document.querySelector(
+          ".sunrise .sunset1"
+        ).textContent = `Нар жаргах - ${sunset}`;
+        console.log(data);
+      }
+
+      function updateTomorrowForecast(data) {
+        const block = document.getElementById("mygmar");
+        block.innerHTML = data
+          .map(
+            (forecast) => `
+        <div class="child">
+          <div class="top">
+            <p>
+              ${new Date(forecast.dt_txt).toLocaleDateString("mn-MN", {
+                weekday: "long",
+              })}
+            </p>
+            <img src="https://openweathermap.org/img/wn/${
+              forecast.weather[0].icon
+            }@2x.png" alt="Weather Icon" />
+          </div>
+          <div class="linear">
+            
+            <div class="gradus">
+              <p>${Math.round(forecast.main.temp_min)}°</p>
+              <p>${Math.round(forecast.main.temp_max)}°</p>
+            </div>
+          </div>
+        </div>
+      `
+          )
+          .join("");
+        console.log(data);
+      }
+
+      function searchCity() {
+        const city = document.getElementById("city-input").value.trim();
+        if (city) {
+          fetchWeather(city);
+        } else {
+          alert("Хотын нэрийг оруулна уу!");
+        }
+      }
+
+      function formatTime(timestamp) {
+        const date = new Date(timestamp * 1000);
+        return date.toLocaleTimeString("mn-MN", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+
+      function getFormattedDate() {
+        const now = new Date(Date.now());
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
+      fetchWeather("Ulaanbaatar");
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

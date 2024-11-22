@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 24px 24px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .pro {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .profile-container .hi {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  text-align: start;
+  padding: 10px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search input {
+  border-radius: 10px 0 0 10px;
+  background: linear-gradient(to bottom, #e6eef0, #a4e0ec) no-repeat;
+  border: 1px solid black;
+  border-right: none;
+  width: 120px;
+}
+.search button {
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(to bottom, #e6eef0, #a4e0ec) no-repeat;
+  border: 1px solid black;
+  border-left: none;
+}
+.today {
+  margin: 0 24px;
+  padding: 12px 30px;
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  border-radius: 30px;
+  /* box-shadow: 4px 4px rgb(1, 36, 56); */
+}
+.today .cloud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.today .cloud .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.today .tsastai {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.today .tsastai p {
+  font-size: 10px;
+}
+.today .odoo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.today .now {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  width: 50px;
+  height: 124px;
+  align-items: center;
+  justify-content: center;
+}
+.today .now p {
+  font-size: 10px;
+  font-weight: bold;
+}
+.today .now .degree {
+  font-size: 20px;
+  font-weight: bold;
+}
+.today .cloud .right {
+  display: flex;
+  flex-direction: column;
+}
+.mygmar {
+  margin: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.mygmar .child {
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  width: 70px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+/* .mygmar .child1 {
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  width: 75px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+} */
+.mygmar img {
+  width: 42px;
+  height: 42px;
+}
+.mygmar p {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.mygmar .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 10px;
+}
+.mygmar .linear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mygmar .linear .gradus p {
+  font-size: 15px;
+  font-weight: 500;
+}
+.sunrise .sun {
+  background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+  border-radius: 40px;
+  width: 180px;
+  height: 140px;
+  padding: 12px;
+}
+.sunrise {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 24px;
+}
+.sunrise .unuudur {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sunrise .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#snow-container {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.snow {
+  animation: fall ease-in infinite, sway ease-in-out infinite;
+  color: skyblue;
+  position: absolute;
+}
+
+footer {
+  background-color: #ffdfb9;
+  bottom: 0;
+  font-family: sans-serif;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer .heart {
+  color: #dc143c;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 50px;
+  }
+  50% {
+    margin-left: -50px;
+  }
+  75% {
+    margin-left: 50px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+/* rain animation starts here. */
+:root {
+  --thunder-duration: 10s;
+  --thunder-delay: 5s;
+}
+hr.thunder {
+  border: unset;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #000;
+  animation-name: thunder;
+  animation-duration: var(--thunder-duration);
+  animation-timing-function: linear;
+  animation-delay: var(--thunder-delay);
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+
+hr:not(.thunder) {
+  width: 50px;
+  border-color: transparent;
+  border-right-color: rgba(255, 255, 255, 0.7);
+  border-right-width: 50px;
+  position: absolute;
+  bottom: 100%;
+  transform-origin: 100% 50%;
+  animation-name: rain;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rain {
+  from {
+    transform: rotate(105deg) translateX(0);
+  }
+  to {
+    transform: rotate(105deg) translateX(calc(100vh + 20px));
+  }
+}
+
+@keyframes thunder {
+  0% {
+    background-color: transparent;
+  }
+  1% {
+    background-color: white;
+  }
+  2% {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  8% {
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .ub .today {
+    width: 800px;
+  }
+  .mygmar {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .mygmar .child {
+    border-radius: 30px;
+    background: linear-gradient(to bottom, #afebf6, #008da9) no-repeat;
+    width: 100px;
+    height: 298px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mygmar img {
+    width: 50px;
+    height: 50px;
+  }
+  .mygmar .child .linear img {
+    width: 15px;
+    height: 100px;
+  }
+  .mygmar .child .linear {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .mygmar .child1 {
+    display: none;
+  }
+  .sunrise {
+    margin: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    height: 140vh;
+  }
+}
